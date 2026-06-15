@@ -48,7 +48,7 @@ riven-skills/
 
 ### 2. Liepin Jobs（猎聘求职工具）`v0.2.0`
 
-基于魔塔平台原作者 @xllin 修改，做了猎聘官方mcp的更新适配
+基于魔塔平台https://www.modelscope.cn/skills/@xllinbupt/liepin-jobs/summary/ @xllin 的修改，做了猎聘官方mcp的更新适配
 基于猎聘 MCP Server 的完整求职工具，支持职位搜索、简历投递与在线编辑。
 
 | 功能 | 说明 |
