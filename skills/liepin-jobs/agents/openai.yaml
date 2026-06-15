@@ -1,0 +1,7 @@
+interface:
+  display_name: "Liepin Jobs"
+  short_description: "Search jobs, apply, and fully manage resume (basic info, education, work/project experience, job preferences, self-assessment) on Liepin via MCP."
+  default_prompt: "Use $liepin-jobs to search roles on Liepin, review my resume, update any resume section (basic info, education, work experience, projects, job preferences, self-assessment), and prepare safe job applications. Check SKILL.md for full command reference."
+
+policy:
+  allow_implicit_invocation: true
