@@ -20,6 +20,16 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+# ── 编码修复：确保输出使用 UTF-8 ────────────────────────────────────────
+os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+if sys.platform == "win32":
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
+
 # ── 配置 ──────────────────────────────────────────────────────────────
 
 DEFAULT_MCP_URL = "https://open-agent.liepin.com/mcp/user"
@@ -439,12 +449,21 @@ def cmd_call(args):
     _print_result(result, args.json)
 
 
+def _safe_print_json(data):
+    """安全打印 JSON，自动处理编码问题"""
+    try:
+        print(json.dumps(data, indent=2, ensure_ascii=False))
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        # 编码失败时回退到 ASCII 模式
+        print(json.dumps(data, indent=2, ensure_ascii=True))
+
+
 def _print_result(result, as_json=False):
     """输出结果"""
     if "result" in result:
         content = result["result"]
         if as_json:
-            print(json.dumps(content, indent=2, ensure_ascii=False))
+            _safe_print_json(content)
         else:
             # MCP tool result: {"content": [{"type": "text", "text": "..."}]}
             if isinstance(content, dict) and "content" in content:
@@ -453,17 +472,20 @@ def _print_result(result, as_json=False):
                         text = item["text"]
                         try:
                             parsed = json.loads(text)
-                            print(json.dumps(parsed, indent=2, ensure_ascii=False))
+                            _safe_print_json(parsed)
                         except (json.JSONDecodeError, TypeError):
-                            print(text)
+                            try:
+                                print(text)
+                            except UnicodeEncodeError:
+                                print(text.encode("utf-8", errors="replace").decode("utf-8", errors="replace"))
             else:
-                print(json.dumps(content, indent=2, ensure_ascii=False))
+                _safe_print_json(content)
     elif "error" in result:
         err = result["error"]
         print(f"错误 [{err.get('code', '?')}]: {err.get('message', '未知错误')}", file=sys.stderr)
         sys.exit(1)
     else:
-        print(json.dumps(result, indent=2, ensure_ascii=False))
+        _safe_print_json(result)
 
 
 # ── CLI 入口 ──────────────────────────────────────────────────────────

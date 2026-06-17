@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 \"d:\\\\GitRepository\\\\riven-skills\\\\skills\\\\liepin-jobs\\\\liepin_mcp.py\" my-resume)",
+      "Bash(python \"d:\\\\GitRepository\\\\riven-skills\\\\skills\\\\liepin-jobs\\\\liepin_mcp.py\" my-resume)",
+      "Read(//c/Users/老菇凉/.claude/**)",
+      "Bash(dir /s /b \"%APPDATA%\\\\Code\\\\User\\\\globalStorage\\\\saoudrizwan.claude-dev\\\\settings\\\\*mcp*\")",
+      "Bash(dir /s /b \"%USERPROFILE%\\\\.claude\\\\*liepin*\")",
+      "Bash(mkdir -p 'C:\\\\Users\\\\老菇凉/.config/liepin-mcp')",
+      "Bash(echo '{\"user_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyMDUwMDkyMDEiLCJ1c2VySWQiOjIwNTAwOTIwMSwiaWF0IjoxNzgxNTMzMjk5LCJleHAiOjE3ODkzMDkyOTl9.msrhHFvjA95Irrmm0H-CrMh6YdzDmB5aJ9878i5z4Kg\"}')",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" my-resume)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --address \"北京\" --salaryFloor \"18000\" --salaryCap \"25000\" --workExperience \"3-5年\" --page 0 --json)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --address \"北京\" --salaryFloor \"18000\" --salaryCap \"25000\" --workExperience \"3-5年\" --page 1 --json)",
+      "Bash(python -c ' *)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --address \"北京\" --salaryFloor \"18000\" --salaryCap \"25000\" --workExperience \"3-5年\" --page 0 --json > \"d:/GitRepository/riven-skills/skills/liepin-jobs/jobs_p0.json\" 2>&1)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --address \"北京\" --salaryFloor \"18000\" --salaryCap \"25000\" --workExperience \"3-5年\" --page 1 --json > \"d:/GitRepository/riven-skills/skills/liepin-jobs/jobs_p1.json\" 2>&1)",
+      "Bash(python -c \" *)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --address \"北京\" --page 0 --json)",
+      "Bash(PYTHONIOENCODING=utf-8 python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --address \"北京\" --page 0 --json)",
+      "Bash(grep -E \"\\\\.json$|_parse\")",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" list-tools --json)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --compNature \"国企\" --page 0 --json)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --compNature \"国企\" --address \"深圳\" --salaryFloor \"18000\" --salaryCap \"25000\" --page 0 --json)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端开发\" --compNature \"国企\" --page 0 --json)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" apply-job --jobId 83099419 --jobKind \"2\" --json)",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"WEB前端\" --compNature \"国企\" --address \"深圳\" --page 0 --json)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); inner=json.loads\\(d['content'][0]['text']\\); jobs=inner['data']['list']; [print\\(f'[{j[\\\\\"jobId\\\\\"]}] {j[\\\\\"jobName\\\\\"]} | {j[\\\\\"company\\\\\"]} | {j[\\\\\"location\\\\\"]} | {j[\\\\\"salary\\\\\"]} | {j[\\\\\"workYears\\\\\"]}'\\) for j in jobs]\")",
+      "Bash(python \"d:/GitRepository/riven-skills/skills/liepin-jobs/liepin_mcp.py\" search-job --jobName \"前端\" --compNature \"国企\" --address \"深圳\" --page 1 --json)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "additionalDirectories": [
+      "d:\\GitRepository\\riven-skills\\skills\\liepin-jobs"
+    ]
+  }
+}
